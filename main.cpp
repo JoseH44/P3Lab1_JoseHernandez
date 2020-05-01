@@ -25,25 +25,27 @@ bool primo(int num){
 
 int main() {
 	int num;
-	
 	int referencia;
-	int num_primo;
+	
+	
+	
 	cout<<"Ingrese un Numero menor que 100: ";
 	cin>>num;
 	if(num < 100){
 		for(int i = 0;i<num;i++){
-			referencia = i;
+			for(int j = 0; j<num;j++){
+				if(primo(i) && primo(j)){
+					if((i + j) < num && (i + j)%2 == 0){
+						int suma = j+i;
+						
+						cout<<i <<" + "<<j<<" = "<<suma<<endl;
+						break;
+					
+					}
+				}	
+			}//fin del for interior
 			
-			if(primo(referencia)){
-				num_primo = referencia;
-				if((num_primo + i) < num && (num_primo + i)%2 == 0){
-						int suma = num_primo+i;
-						cout<<num_primo <<" + "<<i<<" = "<<suma<<endl;
-				}
-				
-			}//fin del if exterior
-			
-		}//fin del for
+		}//fin del for exterior
 	}else{
 		cout<<"El Numero Debe ser Menor que 100";
 	}
@@ -54,9 +56,4 @@ int main() {
 
 
 
-/*if(primo(i)){
-					if((num_primo + i) < num && (num_primo + i)%2 == 0){
-						int suma = num_primo+i;
-						cout<<num_primo <<" + "<<i<<" = "<<suma<<endl;
-					}//fin del if interior
-				}//fin del if de enmedio*/
+
